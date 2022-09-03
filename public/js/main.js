@@ -1,6 +1,6 @@
 const deleteBtn = document.querySelectorAll('.del')
 const todoItem = document.querySelectorAll('span.not')
-const todoComplete = document.querySelectorAll('span.completed')
+const todoComplete = document.querySelectorAll('span.watched')
 
 Array.from(deleteBtn).forEach((el)=>{
     el.addEventListener('click', deleteTodo)
@@ -33,13 +33,13 @@ async function deleteTodo(){
 }
 
 async function markComplete(){
-    const todoId = this.parentNode.dataset.id
+    const showId = this.parentNode.dataset.id
     try{
         const response = await fetch('todos/markComplete', {
             method: 'put',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
-                'todoIdFromJSFile': todoId
+                'showIdFromJSFile': showId
             })
         })
         const data = await response.json()
@@ -57,7 +57,7 @@ async function markIncomplete(){
             method: 'put',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
-                'todoIdFromJSFile': todoId
+                'showIdFromJSFile': todoId
             })
         })
         const data = await response.json()
