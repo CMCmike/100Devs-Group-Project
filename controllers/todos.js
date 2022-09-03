@@ -5,15 +5,15 @@ module.exports = {
         console.log(req.user)
         try{
             const todoItems = await Todo.find({userId:req.user.id})
-            const itemsLeft = await Todo.countDocuments({userId:req.user.id,completed: false})
+            const itemsLeft = await Todo.countDocuments({userId:req.user.id,watched: false})
             res.render('todos.ejs', {todos: todoItems, left: itemsLeft, user: req.user})
         }catch(err){
             console.log(err)
         }
     },
-    createTodo: async (req, res)=>{
+        createTodo: async (req, res)=>{
         try{
-            await Todo.create({todo: req.body.todoItem, completed: false, userId: req.user.id})
+            await Todo.create({todo: req.body.todoItem, watched: false, userId: req.user.id})
             console.log('Todo has been added!')
             res.redirect('/todos')
         }catch(err){
@@ -22,19 +22,19 @@ module.exports = {
     },
     markComplete: async (req, res)=>{
         try{
-            await Todo.findOneAndUpdate({_id:req.body.todoIdFromJSFile},{
-                completed: true
+            await Todo.findOneAndUpdate({_id:req.body.showIdFromJSFile},{
+                watched: true
             })
-            console.log('Marked Complete')
-            res.json('Marked Complete')
+            console.log('Added watched show')
+            res.json('Added watched show')
         }catch(err){
             console.log(err)
         }
     },
     markIncomplete: async (req, res)=>{
         try{
-            await Todo.findOneAndUpdate({_id:req.body.todoIdFromJSFile},{
-                completed: false
+            await Todo.findOneAndUpdate({_id:req.body.showIdFromJSFile},{
+                watched: false
             })
             console.log('Marked Incomplete')
             res.json('Marked Incomplete')
@@ -52,4 +52,5 @@ module.exports = {
             console.log(err)
         }
     }
+
 }    
