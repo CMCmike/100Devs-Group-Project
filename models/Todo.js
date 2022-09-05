@@ -5,7 +5,12 @@ const TodoSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  
+
+  watching: {//watching schema
+    type: Boolean,
+    required: true,
+  },
+
  watched: {//watched schema
     type: Boolean,
     required: true,
@@ -17,3 +22,4 @@ const TodoSchema = new mongoose.Schema({
 })
 
 module.exports = mongoose.model('Todo', TodoSchema)
+
