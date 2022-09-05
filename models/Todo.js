@@ -6,6 +6,11 @@ const TodoSchema = new mongoose.Schema({
     required: true,
   },
 
+  toWatch:{//toWatch schema
+    type: Boolean,
+    required: true,
+  },
+
   watching: {//watching schema
     type: Boolean,
     required: true,
@@ -14,6 +19,7 @@ const TodoSchema = new mongoose.Schema({
  watched: {//watched schema
     type: Boolean,
     required: true,
+    
   },
   userId: {
     type: String,
