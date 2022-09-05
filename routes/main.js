@@ -6,8 +6,11 @@ const homeController = require('../controllers/home')
 //  controller for watching
 const watchingController = require('../controllers/watchingShows')
 
- //controller for watched
- const watchedController = require('../controllers/watchedShows')
+//controller for watched
+const watchedController = require('../controllers/watchedShows')
+
+//controller for toWatch
+const toWatchController = require('../controllers/toWatch')
 
 const { ensureAuth, ensureGuest } = require('../middleware/auth')
 
@@ -23,5 +26,8 @@ router.get('/watching', watchingController.getWatching)
 
 //watched
 router.get('/finished', watchedController.getWatched)
+
+//toWatch
+router.get('/toWatch', toWatchController.getToWatch)
 
 module.exports = router
