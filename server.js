@@ -8,10 +8,14 @@ const flash = require('express-flash')
 const logger = require('morgan')
 const connectDB = require('./config/database')
 const mainRoutes = require('./routes/main')
-const todoRoutes = require('./routes/todos')
-//watched
-const watchedRoutes = require('./routes/todos')
+//// consolidated watch route ///
+const watchRoutes = require('./routes/watch')
 
+/////// can delete /////
+// const todoRoutes = require('./routes/todos')
+// //watched
+// const watchedRoutes = require('./routes/todos')
+//// can delete ///////
 
 require('dotenv').config({path: './config/.env'})
 
@@ -42,10 +46,14 @@ app.use(passport.session())
 app.use(flash())
   
 app.use('/', mainRoutes)
-app.use('/todos', todoRoutes)
+/// consolidated watch route //
+app.use('/watch', watchRoutes)
+////// can delete ///
+// app.use('/todos', todoRoutes)
 //watched
-app.use('/finished', watchedRoutes)
- 
+// app.use('/finished', watchedRoutes)
+/// can delete //// 
+
 app.listen(process.env.PORT, ()=>{
     console.log('Server is running, you better catch it!')
 })    
