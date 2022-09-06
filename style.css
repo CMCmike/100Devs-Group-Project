@@ -10,9 +10,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-   
-    
-
 }
 
 header {
@@ -41,10 +38,11 @@ section {
     justify-content: center;
 }
 
-section p {
+#formContainer p {
     font-size: 22px;
 }
-section form {
+
+ #formContainer form {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -53,29 +51,29 @@ section form {
 }
 
 input[type=text] {
-    margin-bottom: 15px;
     color: black;
     width: 50%;
+    margin-bottom: 15px;
     font-size: 28px;
-    
 }
 
 input[type=submit] {
     color: black;
-    width: 25%;
-    font-size: 18px;
+    width: 125px;
+    margin: 10px;
     border-radius: 10px;
 }
 
 input[type=submit]:hover {
     background-color: rgb(226, 237, 204);
   }
+
 #buttons {
     display: flex;
     flex-direction: row;
 }
-  button {
-    display: inline;
-    width: 75px;
+
+#buttons button {
     color: black;
+    width: 75px;
   }
