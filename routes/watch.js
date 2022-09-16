@@ -1,11 +1,13 @@
 const express = require('express')
 const router = express.Router()
+
 const watchController = require('../controllers/watch')
 const { ensureAuth, ensureGuest } = require('../middleware/auth')
 
+//apparently not working?
 
-
-// router.get('/', ensureAuth, todosController.getTodos)
+//watch incomplete not used
+router.get('/watch', watchController.getWatching)
 
 // watching
 router.get('/watching', watchController.getWatching)

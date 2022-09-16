@@ -6,7 +6,7 @@ getToWatch: async (req,res)=>{
     try{
         const toWatch = await Todo.find({toWatch:true})
         const countToWatch = await Todo.countDocuments({userId:req.user.id, toWatch: true})
-        res.render('watchList.ejs', {allWatchListShows: toWatch, countToWatch: countToWatch, user: req.user})
+        res.render('toWatch.ejs', {allToWatchShows: toWatch, countToWatch: countToWatch, user: req.user})
     }catch(err){
         console.log(err)
     }

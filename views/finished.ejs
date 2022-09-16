@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Watched shows</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">        <link rel="stylesheet" href="style.css">
@@ -24,14 +24,10 @@
 
     <h2><%= user.userName %> has watched <%= countWatched %> entire shows so far.</h2>
 
+    <!-- buttons -->
+    <%- include('partials/buttonsFinished.ejs') %>
 
-    <section id="buttons">
-        <a href="./index.html"><button>Home</button></a>
-        <a href="./watchlist.html"><button>Watchlist</button></a>
-        <a href="./watching.html"><button>Watching</button></a>
-        <a href="./finished.html"><button>Finished</button></a>
-        <a href="/logout"><button>Logout</button></a>
-    </section>
+    
 
     <script src="js/main.js"></script>
 </body>

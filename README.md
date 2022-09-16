@@ -23,6 +23,7 @@ bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mon
 npm install
 
 <h2>Things to Add</h2>
-Create a .env file and add the following as key: value
-PORT: 2121 (can be any port example: 3000)
-DB_STRING: your database URI
+Create a .env file in config folder and add the following as key: value
+PORT= 2121 (can be any port example: 3000)
+DB_STRING= your database URI
+

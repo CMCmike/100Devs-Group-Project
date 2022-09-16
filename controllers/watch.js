@@ -7,7 +7,7 @@ module.exports = {
         try{
             const toWatch = await Watch.find({toWatch:true})
             const countToWatch = await Watch.countDocuments({userId:req.user.id, toWatch: true})
-            res.render('watchList.ejs', {allWatchListShows: toWatch, countToWatch: countToWatch, user: req.user})
+            res.render('ToWatch.ejs', {allToWatchShows: toWatch, countToWatch: countToWatch, user: req.user})
         }catch(err){
             console.log(err)
         }
